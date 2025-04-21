@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-bg-color: #111828;
+
+  --shadow-custome: 0 0 7px;
+
+  --breakpoint-xs: 30rem;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-xl: 96rem;
+
+  --font-LatoLight: "Lato Light";
+  --font-LatoNormal: "Lato Regular";
+  --font-LatoBold: "Lato Bold";
+}
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@utility nav-link {
+  @apply block py-2 px-3 text-gray-50 text-xl rounded-sm md:bg-transparent md:p-0 dark:text-zinc-800;
+}
+
+@utility nav-link--mobile {
+  @apply block py-2 px-3 rounded-sm md:bg-transparent md:p-0 text-white;
+}
+
+@utility nav-link--active {
+  @apply block py-2 px-3 text-blue-700 text-xl rounded-sm md:bg-transparent md:p-0 md:text-blue-700;
+}
+@layer base {
+  body {
+    @apply dark:bg-zinc-950 dark:text-white;
+  }
+}
+
+@layer components {
+  .loader {
+    border: 5px solid black;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

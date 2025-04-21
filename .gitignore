@@ -1,0 +1,15 @@
+# Laravel backend
+/Back-End/vendor
+/Back-End/storage/*.key
+/Back-End/.env
+/Back-End/.env.*
+/Back-End/public/storage
+/Back-End/public/hot
+/Back-End/public/mix-manifest.json
+/Back-End/phpunit.result.cache
+
+# Next.js frontend
+/Front-end/.next
+/Front-End/node_modules
+/Front-End/out
+/Front-End/.env*
